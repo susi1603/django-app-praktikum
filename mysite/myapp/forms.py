@@ -7,7 +7,7 @@ from django import forms
 class PositionForm(forms.Form):
     position = forms.CharField()
 
-
+# form to render from our Model in models.py
 class AddForm(forms.ModelForm):
     class Meta:
         model = Task
@@ -18,5 +18,6 @@ class AddForm(forms.ModelForm):
            
         }
 
+# form class for the in progress form which contains the Google Calendar API
 class CalendarForm(forms.Form):
     calendar_field = forms.DateTimeField()

@@ -6,6 +6,7 @@
 </div>
 
 <div class="card-body">
+    <p>Please keep add a password with at least 4 digits and 4 letters.</p>
     <form method="POST">
         {% csrf_token %}
         <label>{{form.username.label}}</label>
