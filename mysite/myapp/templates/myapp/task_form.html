@@ -1,0 +1,108 @@
+{% extends 'myapp/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+
+<div class="card-body">
+    <form method="POST" action="" style= "padding: 7px;">
+        {% csrf_token %}
+
+        <!-- JOB TITLE -->
+        <p>
+            {{ form.title.label_tag }}
+            {{ form.title }}
+            {% if form.title.help_text %}
+                <small style="color: grey">{{ form.title.help_text }}</small>
+            {% endif %}
+            {% for error in form.title.errors %}
+                <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+
+        <!-- POSITION DESCRIPTION -->
+        <p>
+            {{ form.jobdescription.label_tag }}
+            {{ form.jobdescription }}
+            {% if form.jobdescription.help_text %}
+                <small style="color: grey">{{ form.jobdescription.help_text }}</small>
+            {% endif %}
+            {% for error in form.jobdescription.errors %}
+                <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+
+        <!--  INTERVIEW -->
+        <p>
+            {{ form.interview.label_tag }}
+            {{ form.interview }}
+            {% if form.interview.help_text %}
+                <small style="color: grey">{{ form.interview.help_text }}</small>
+            {% endif %}
+            {% for error in form.interview.errors %}
+                <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+
+        <p>
+            {{mydate.as_p}}
+        </p>
+
+        <a href="{% url 'demo' %}">Connect to Google Calendar</a>
+
+        <!--  REJECTED -->
+        <p>
+            {{ form.rejected.label_tag }}
+            {{ form.rejected }}
+            {% if form.rejected.help_text %}
+                <small style="color: grey">{{ form.rejected.help_text }}</small>
+            {% endif %}
+            {% for error in form.rejected.errors %}
+                <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+
+        <input class="button" type="submit" style="margin-top: 15px; margin-bottom: 15px;" value="Submit">
+
+    </form>
+</div>
+
+{% endblock content %}
+
+
+
+<!-- {% for field in form %}
+        {% if field.html_name == "joblink" %}
+        <p>
+            {{ field.label_tag }}
+            <p><a href="{{field.value}}"></a></p>
+            <a>
+            {{ field }}
+            </a>
+            {% if field.help_text %}
+                <small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+                <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+        {% else %}
+        <p>
+            {{ field.label_tag }}
+            {{ field }}
+            {% if field.help_text %}
+                <small style="color: grey">{{ field.help_text }}</small>
+            {% endif %}
+            {% for error in field.errors %}
+                <p style="color: red">{{ error }}</p>
+            {% endfor %}
+        </p>
+        {% endif %}       
+        {% endfor %} -->
+
+        <!-- <a style="font-family: 'Nunito', sans-serif; font-size: 12px;"
+            href="{{form.joblink.value}}">
+            <input type="submit" value="{{form.joblink.value}}">{{form.joblink.value}}
+        </a> -->
