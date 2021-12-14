@@ -11,19 +11,34 @@ To install this application, we recommend to follow the instructions in the offi
 Please make sure to have Python 3.x.y or higher. 
 
 Once done that, open your terminal and write the following command lines: 
-    $ python -m pip install Django 
+
+
+$ python -m pip install Django 
+
 
 or for Windows: 
-    $ py -m pip install Django
- 
+
+
+$ py -m pip install Django
+
+
 Once completed, done! You're all set and ready to run the application. Open your prefered code editor (VS Code is the one I used since it has an integrated terminal)
 
 Then cd to the root of the project "/mysite" and from there run the following command lines: 
-    python ./migrate.py makemigrations
-    python ./migrate.py migrate 
-    python ./migrate.py runserver
 
-Once up and running open your browser and go to your localhost:8000, register with a valid and strong enough password and you'll be ready to try the app. 
+
+$  python ./migrate.py makemigrations
+
+
+$  python ./migrate.py migrate 
+
+
+$  python ./migrate.py runserver
+
+
+Once up and running open your browser and go to your http://localhost:8000/
+
+register with a valid and strong enough password and you'll be ready to try the app. 
 
 
     
